@@ -4,55 +4,83 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Satish| Portfolio</title>
-    <link rel="stylesheet" href="style1.css" />
+    <title>Satish | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
+    <div class="scroll-line"></div>
     <nav class="navbar">
-        <div class="logo"> <span>SATISH</span> ADEY </div>
-        <input type="checkbox" id="menu-toggle" hidden>
-        <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
-        <ul class="nav-links">
-            <li><a href="#"> <span>Home </span></a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="container nav-container">
+            <div class="logo"> <span>SATISH</span> ADEY </div>
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox" hidden>
+            <label for="menu-toggle" class="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </label>
+            <div class="menu-overlay"></div>
+
+            <ul class="nav-links">
+                <li><a href="#" onclick="document.getElementById('menu-toggle').checked = false">Home</a></li>
+                <li><a href="#about" onclick="document.getElementById('menu-toggle').checked = false">About</a></li>
+                <li><a href="#skills" onclick="document.getElementById('menu-toggle').checked = false">Skills</a></li>
+                <li><a href="#projects" onclick="document.getElementById('menu-toggle').checked = false">Projects</a>
+                </li>
+                <li><a href="#contact" onclick="document.getElementById('menu-toggle').checked = false">Contact</a></li>
+                <li class="mobile-only"><a href="#" class="btn primary">Hire Me</a></li>
+            </ul>
+            <div class="nav-btn-desktop">
+                <a href="#" class="btn primary">Hire Me</a>
+            </div>
+        </div>
     </nav>
 
-    <div id="particles-js">
-        <section class="hero">
-            <div class="hero-left">
+    <section id="hero-section" class="hero-container">
+
+        <div id="particles-js"></div>
+
+        <div class="hero">
+            <div class="hero-left" data-aos="fade-right">
                 <p class="hero-subtitle">WE DESIGN & BUILD BRANDS</p>
-                <h1>Hi, I am <span>SATISH ADEY </span> <br>I build responsive & modern websites.</h1>
+                <h1>Hi, I am <span>SATISH ADEY</span> <br>
+                    I build <span class="typewriter"
+                        data-words='["responsive websites.", "modern UI designs.", "creative solutions.", "digital magic."]'>
+                    </span>
+                </h1>
                 <div class="hero-button">
-                    <a href="#" class="btn primary">Hire me</a>
-                    <a href="# " class="btn outline" download>Download CV</a>
+                    <a href="#contact" class="btn primary">Hire me</a>
                 </div>
             </div>
-            <div class="hero-right">
+
+            <div class="hero-right" data-aos="zoom-in" data-aos-delay="300">
                 <div class="image-bg"></div>
                 <img src="IMGAGE/my.png" alt="SATISH" />
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-
-    <section id="about" class="about-section">
+    <section id="about" class="about-section reveal">
         <div class="container">
             <div class="about-grid">
-                <div class="about-photo">
-                    <img src="IMGAGE/my.png" alt="Profile Picture">
+                <div class="about-photo" data-aos="fade-right">
+                    <div class="photo-container">
+                        <div class="experience-badge">
+                            <span>01+</span>
+                            <p>Years Exp.</p>
+                        </div>
+                        <div class="photo-border"></div>
+                        <img src="IMGAGE/my.png" alt="Profile Picture">
+                    </div>
                 </div>
-                <div class="about-content">
+                <div class="about-content" data-aos="fade-left">
                     <h5 class="section-subtitle">MY INTRODUCTION</h5>
                     <h2>About Me</h2>
                     <p>
-                        I'm Satish Adey, a frontend developer for Madhay Pradesh.
+                        “I'm Satish Adey, a frontend developer from Bhopal , Madhya Pradesh, India.”
                         I enjoy building responsive and user-friendly websites.
                         Skilled in HTML, CSS, and JavaScript with hands-on project experience.
                         Created a fashion e-commerce site and personal portfolio.
@@ -71,179 +99,289 @@
                         <p><strong>Email:</strong> satishadey101.in@gmail.com</p>
                     </div>
                     <div class="about-interests">
-                        <span><i class="fas fa-music"></i> Music</span>
-                        <span><i class="fas fa-plane"></i> Travel</span>
-                        <span><i class="fas fa-film"></i> Movie</span>
-                        <span><i class="fas fa-futbol"></i> Sports</span>
+                        <span data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-music"></i> Music</span>
+                        <span data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-plane"></i> Travel</span>
+                        <span data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-film"></i> Movie</span>
+                        <span data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-futbol"></i> Sports</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="services" class="services-section container">
+        <div class="section-header" data-aos="fade-down">
+            <h2 class="title">My <span>Services</span></h2>
+            <p>I provide high-quality digital solutions to help your business grow.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Web Development</h3>
+                <p>Clean, modern, and high-performance websites built with the latest technologies like HTML, CSS, and
+                    JavaScript.</p>
+            </div>
+
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="service-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Responsive Design</h3>
+                <p>Your website will look perfect on every screen size—from small mobile phones to large desktop
+                    monitors.</p>
+            </div>
+
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="service-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Speed Optimization</h3>
+                <p>Fast-loading websites that provide the best user experience and rank higher on Google search results.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <section id="skills" class="skills-section">
-        <h2>My Skills</h2>
-        <div class="skills-slider">
-            <div class="skills-track">
-                <div class="skill-card">
-                    <img src="IMGAGE/html.png" class="skill-icon" alt="HTML" />
-                    <h4>HTML</h4>
-                    <div class="skill-label">95%</div>
-                </div>
-                <div class="skill-card">
-                    <img src="IMGAGE/css.png" class="skill-icon" alt="CSS" />
-                    <h4>CSS</h4>
-                    <div class="skill-label">92%</div>
-                </div>
-                <div class="skill-card">
-                    <img src="IMGAGE/javascript.png" class="skill-icon" alt="JavaScript" />
-                    <h4>JavaScript</h4>
-                    <div class="skill-label">80%</div>
-                </div>
-                <div class="skill-card">
-                    <img src="IMGAGE/bootstrap.png" class="skill-icon" alt="Bootstrap" />
-                    <h4>Bootstrap</h4>
-                    <div class="skill-label">90%</div>
-                </div>
-                <div class="skill-card">
-                    <img src="IMGAGE/react.png" class="skill-icon" alt="React" />
-                    <h4>React</h4>
-                    <div class="skill-label">78%</div>
+        <div class="grain-bg"></div>
+
+        <div class="relative">
+            <span class="header-text" data-aos="fade-down" data-aos-duration="1000">
+                Technical Proficiency
+                <svg viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </span>
+
+            <h1 data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                My Technical Arsenal & Skills
+            </h1>
+
+            <div class="grid">
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-content">
+                        <img src="IMGAGE/html.png" class="skill-img-icon" alt="HTML5" />
+                        <h2>HTML5 <br /> Structural Core</h2>
+                        <p>95% Proficiency. Expert in semantic HTML5 structures.</p>
+                        <button class="btn btn-glow">View Projects</button>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <img src="IMGAGE/java.png" class="skill-icon" alt="Java" />
-                    <h4>Java</h4>
-                    <div class="skill-label">75%</div>
+                <div class="card" data-aos="fade-up" data-aos-delay="450">
+                    <div class="card-content">
+                        <img src="IMGAGE/css.png" class="skill-img-icon" alt="CSS3" />
+                        <h2>CSS3 <br /> Visual Styling</h2>
+                        <p>92% Proficiency. Advanced layouts and animations.</p>
+                        <button class="btn btn-glow">See Designs</button>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <img src="IMGAGE/github.png" class="skill-icon" alt="GitHub" />
-                    <h4>GitHub</h4>
-                    <div class="skill-label">70%</div>
+                <div class="card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card-content">
+                        <img src="IMGAGE/javascript.png" class="skill-img-icon" alt="JavaScript" />
+                        <h2>JavaScript <br /> Dynamic Logic</h2>
+                        <p>70% Proficiency. Interactive UI and ES6+ logic.</p>
+                        <button class="btn btn-glow">Check Code</button>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <img src="IMGAGE/html.png" class="skill-icon" alt="HTML" />
-                    <h4>HTML</h4>
-                    <div class="skill-label">95%</div>
-                </div>
-                <div class="skill-card">
-                    <img src="IMGAGE/css.png" class="skill-icon" alt="CSS" />
-                    <h4>CSS</h4>
-                    <div class="skill-label">92%</div>
-                </div>
-                <div class="skill-card">
-                    <img src="IMGAGE/javascript.png" class="skill-icon" alt="JavaScript" />
-                    <h4>JavaScript</h4>
-                    <div class="skill-label">80%</div>
-                </div>
-                <div class="skill-card">
-                    <img src="IMGAGE/bootstrap.png" class="skill-icon" alt="Bootstrap" />
-                    <h4>Bootstrap</h4>
-                    <div class="skill-label">90%</div>
-                </div>
-                <div class="skill-card">
-                    <img src="IMGAGE/react.png" class="skill-icon" alt="React" />
-                    <h4>React</h4>
-                    <div class="skill-label">78%</div>
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-content">
+                        <img src="IMGAGE/bootstrap.png" class="skill-img-icon" alt="Bootstrap" />
+                        <h2>Bootstrap <br /> Rapid UI</h2>
+                        <p>80% Proficiency. Efficient mobile-first components.</p>
+                        <button class="btn btn-glow">UI Demos</button>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <img src="IMGAGE/java.png" class="skill-icon" alt="Java" />
-                    <h4>Java</h4>
-                    <div class="skill-label">75%</div>
+                <div class="card" data-aos="fade-up" data-aos-delay="450">
+                    <div class="card-content">
+                        <img src="IMGAGE/react.png" class="skill-img-icon" alt="React" />
+                        <h2>React JS <br /> Modern Apps</h2>
+                        <p>50% Proficiency. Component-based architecture.</p>
+                        <button class="btn btn-glow">React Portfolio</button>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <img src="IMGAGE/github.png" class="skill-icon" alt="GitHub" />
-                    <h4>GitHub</h4>
-                    <div class="skill-label">70%</div>
+                <div class="card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card-content">
+                        <img src="IMGAGE/github.png" class="skill-img-icon" alt="GitHub" />
+                        <h2>GitHub <br /> Version Control</h2>
+                        <p>70% Proficiency. Managing repositories and Git workflows.</p>
+                        <button class="btn btn-glow">View Repos</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="projects-section">
-        <h2 class="section-title">My Projacts</h2>
+    <section id="projects" class="projects-section container reveal">
+        <h2 class="section-title" data-aos="fade-up">My <span>Projects</span></h2>
+
         <div class="projects-grid">
-            <div class="project-card">
-                <img src="IMGAGE/profile.png" alt="Projacts 1" />
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-img">
+                    <img src="IMGAGE/img1.png" alt="MeduCare Project" />
+
+                    <div class="project-overlay">
+                        <a href="project-portfolio.html" class="view-btn">View Details</a>
+                    </div>
+                </div>
                 <div class="project-info">
-                    <h3>Portfolio Website</h3>
-                    <p>HTML , CSS , JS</p>
-                    <a href=" file:///C:/Users/satis/Downloads/Protfolio_website-main/Protfolio_website"> View Projact</a>
+                    <h3>MeduCare Emergency System</h3>
+                    <p>Universal Emergency Response System with GPS tracking.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn-code"><i class="fab fa-github"></i>View Code</a>
+                        <a href="#" class="btn-live">Live Demo</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="project-card">
-                <img src="IMGAGE/profile.png" alt="Projacts 2" />
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-img">
+                    <img src="IMGAGE/profile1.png" alt="Portfolio Website" />
+
+                    <div class="project-overlay">
+                        <a href="project-portfolio.html" class="view-btn">View Details</a>
+                    </div>
+                </div>
                 <div class="project-info">
-                    <h3>Portfolio Website</h3>
-                    <p>HTML , CSS , JS</p>
-                    <a href="     "> View Projact</a>
+                    <h3>Personal Portfolio</h3>
+                    <p>Responsive personal branding website with modern UI.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn-code"><i class="fab fa-github"></i>View Code</a>
+                        <a href="#" class="btn-live">Live Demo</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="project-card">
-                <img src="IMGAGE/profile.png" alt="Projacts 3" />
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-img">
+                    <img src="IMGAGE/img2.png" alt="Upcoming Project" />
+
+                    <div class="project-overlay">
+                        <a href="#" class="view-btn">View Details</a>
+                    </div>
+                </div>
                 <div class="project-info">
-                    <h3>Portfolio Website</h3>
-                    <p>HTML , CSS , JS</p>
-                    <a href="     "> View Projact</a>
+                    <h3>E-Commerce App</h3>
+                    <p>Mobile friendly shopping platform logic.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn-code"><i class="fab fa-github"></i>View Code</a>
+                        <a href="#" class="btn-live">Live Demo</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="contact" class="contact-section container reveal">
+        <div class="contact-header" data-aos="fade-down">
+            <h2 class="title">Get In <span>Touch</span></h2>
+            <p>I am currently available for new projects. Let's build something great together!</p>
+        </div>
 
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info" data-aos="fade-right">
+                <div class="info-top">
+                    <h3>Contact Information</h3>
+                    <p>Fill out the form and I will get back to you within 24 hours.</p>
+                </div>
 
-            <form class="contact-form" id="contact-form">
-                <div class=" form-group">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required />
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Your Email" required />
-                </div>
-                <div class="form-group">
-                    <textarea rows="5" id="message" name="message" placeholder="Your Message" required></textarea>
-                </div>
-                <div class="button-group">
-                    <button type="submit" class="btn outline">Send Message</button>
-                    <!-- <button type="button" class="btn primary">Send Message</button> -->
-                    <!-- <button type="submit" class="btn outline">Send Email</button> -->
-                </div>
-            </form>
-            <p id="form-message"></p>
+                <div class="info-details">
+                    <div class="info-item" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <span>Email Me</span>
+                            <p>satishadey@example.com</p>
+                        </div>
+                    </div>
 
+                    <div class="info-item" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <span>Call Me</span>
+                            <p>+91 88829 78888</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <span>Location</span>
+                            <p>Madhay Pradesh, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-card" data-aos="fade-left">
+                <form action="#">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Your Name</label>
+                            <input type="text" placeholder="Enter your name" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Your Email</label>
+                            <input type="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Subject</label>
+                        <input type="text" placeholder="Project Inquiry / Job Opportunity">
+                    </div>
+                    <div class="input-group">
+                        <label>Message</label>
+                        <textarea rows="5" placeholder="Write your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="send-btn">
+                        Send Message <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
+    <button id="scrollToTop" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <footer class="footer">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+        </div>
+
         <div class="footer-content">
-            <h3>SATISH ADEY </h3>
-            <p>Blending design and code to craft digital magic ✨</p>
+            <h3 data-aos="zoom-in" data-aos-duration="1000">SATISH ADEY</h3>
+            <p data-aos="fade-up" data-aos-delay="200">Blending design and code to craft digital magic ✨</p>
+
             <div class="social-icon">
-                <a href="https://github.com/Satishadey" title="GitHub Profile">
+                <a href="https://github.com/Satishadey" title="GitHub" data-aos="flip-left" data-aos-delay="400">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/satish-adey-368b81253/" title="linkedin Profile">
+                <a href="https://www.linkedin.com/in/satish-adey-368b81253/" title="LinkedIn" data-aos="flip-left"
+                    data-aos-delay="600">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://www.instagram.com/ltx.satish____/" title="instagram Profile">
+                <a href="https://www.instagram.com/ltx.satish____/" title="Instagram" data-aos="flip-left"
+                    data-aos-delay="800">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
-            <p class="copyright">© 2025 Satish Adey. All rights reserved.</p>
+
+            <p class="copyright" data-aos="fade-in" data-aos-delay="1000">
+                © 2025 <span>Satish Adey</span>. All rights reserved.
+            </p>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
-
 
 </html>
